@@ -1,5 +1,5 @@
 :root {
-  --base: #202050;
+  --base: black;
   --border: #ccc;
 }
 
@@ -15,12 +15,32 @@ body {
   height: 30vh;
   margin: 20vh 0;
   border: 0.2rem solid var(--border);
-  border-radius: 50%;
-  transition: background 1s ease, border 0.4s ease;
+  border-radius: 0;
+  background:red;
+  transition: background 1s ease, border 0.4s ease, transform 3s ease;
 }
 
-.box.isVisible {
+.circle {
+  width: 30vh;
+  height: 30vh;
+  margin: 20vh 0;
+  border: 0.2rem solid yellow;
+  border-radius: 50%;
+  background:yellow;
+  transform:translateX(20rem);
+  transition: all 2s ease, background 2s ease, border 3s ease;
+}
+
+.box.rotate {
   border-color: var(--base);
   background-color: var(--base);
   border: solid 10rem green;
+  transform: rotate(360deg)
+}
+
+.circle.zoom {
+  border-color: var(--base);
+  background-color: magenta;
+  border: solid 10rem orange;
+  transform:translateX(0rem); 
 }
