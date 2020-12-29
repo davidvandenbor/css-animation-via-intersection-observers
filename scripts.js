@@ -11,9 +11,11 @@ let callback = (entries) => {
 		// then adds `isVisible` class to box
 		// otherwise removes `isVisible` class
 		if(entry.isIntersecting) {
-			entry.target.classList.add('isVisible');
+			entry.target.classList.add('zoom');
+			entry.target.classList.add('rotate');
 		} else {
-			entry.target.classList.remove('isVisible');		
+			entry.target.classList.remove('zoom');	
+			entry.target.classList.remove('rotate');	
 		}
 
 	});
@@ -25,4 +27,7 @@ let observer = new IntersectionObserver(callback, options);
 
 // Get all the `.box` from DOM and attach the observer to these
 document.querySelectorAll('.box')
+	.forEach(item => { observer.observe(item) });
+
+	document.querySelectorAll('.circle')
 	.forEach(item => { observer.observe(item) });
