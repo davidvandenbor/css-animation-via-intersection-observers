@@ -32,4 +32,3 @@ document.querySelectorAll('.box')
 	document.querySelectorAll('.circle')
 	.forEach(item => { observer.observe(item) });
 
-window.location.reload(); 
