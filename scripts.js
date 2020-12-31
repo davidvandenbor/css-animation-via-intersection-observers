@@ -5,23 +5,24 @@ const options = {
 }
 
 // YOU CAN LOOP THROUGH THE CALLBACK IN 2 WAYS:
+// WITH "FOR EACH()" AND "FOR() LOOPS":
 
 // THIS WORKS!!!
-let callback = (items) => { 
-	var item = callback;
-	for (item of items) {
-		// If item (box) is visible - according with the params set in `options`
-		// then adds classes to the ".box" items
-		// otherwise removes classes from the ".box" items
-		if(item.isIntersecting) {
-			item.target.classList.add('zoom');
-			item.target.classList.add('rotate');
-		} else {
-			item.target.classList.remove('zoom');	
-			item.target.classList.remove('rotate');	
-		}
-	};
-}
+// let callback = (items) => { 
+// 	var item = callback;
+// 	for (item of items) {
+// 		// If item (box) is visible - according with the params set in `options`
+// 		// then adds classes to the ".box" items
+// 		// otherwise removes classes from the ".box" items
+// 		if(item.isIntersecting) {
+// 			item.target.classList.add('zoom');
+// 			item.target.classList.add('rotate');
+// 		} else {
+// 			item.target.classList.remove('zoom');	
+// 			item.target.classList.remove('rotate');	
+// 		}
+// 	};
+// }
 
 // AND THIS ALSO WORKS:
 let callback = (items) => { 
@@ -49,3 +50,4 @@ document.querySelectorAll('.box')
 
 	document.querySelectorAll('.circle')
 	.forEach(item => { observer.observe(item) });
+
