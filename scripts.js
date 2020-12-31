@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
 
 const options = {
 	root: null, // use the document's viewport as the container
@@ -53,4 +53,4 @@ document.querySelectorAll('.box')
 	document.querySelectorAll('.circle')
 	.forEach(item => { observer.observe(item) });
 
-});
+
