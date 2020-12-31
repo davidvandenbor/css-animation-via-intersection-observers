@@ -4,20 +4,19 @@ const options = {
 	threshold: 0.4 // percentage of the target element which is visible
 }
 
-let callback = (entries) => { 
-	entries.forEach(entry => {
-		
-		// If entry (box) is visible - according with the params set in `options`
-		// then adds `isVisible` class to box
-		// otherwise removes `isVisible` class
-		if(entry.isIntersecting) {
-			entry.target.classList.add('zoom');
-			entry.target.classList.add('rotate');
-		} else {
-			entry.target.classList.remove('zoom');	
-			entry.target.classList.remove('rotate');	
-		}
 
+let callback = (items) => { 
+	items.forEach(item => {
+		// If item (box) is visible - according with the params set in `options`
+		// then adds classes to the ".box" items
+		// otherwise removes classes from the ".box" items
+		if(item.isIntersecting) {
+			item.target.classList.add('zoom');
+			item.target.classList.add('rotate');
+		} else {
+			item.target.classList.remove('zoom');	
+			item.target.classList.remove('rotate');	
+		}
 	});
 }
 
