@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const options = {
 	root: null, // use the document's viewport as the container
 	rootMargin: '30px', // % or px - offsets added to each side of the intersection 
@@ -51,3 +53,4 @@ document.querySelectorAll('.box')
 	document.querySelectorAll('.circle')
 	.forEach(item => { observer.observe(item) });
 
+});
