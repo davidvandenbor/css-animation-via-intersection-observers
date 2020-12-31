@@ -4,7 +4,26 @@ const options = {
 	threshold: 0.4 // percentage of the target element which is visible
 }
 
+// YOU CAN LOOP THROUGH THE CALLBACK IN 2 WAYS:
 
+// THIS WORKS!!!
+let callback = (items) => { 
+	var item = callback;
+	for (item of items) {
+		// If item (box) is visible - according with the params set in `options`
+		// then adds classes to the ".box" items
+		// otherwise removes classes from the ".box" items
+		if(item.isIntersecting) {
+			item.target.classList.add('zoom');
+			item.target.classList.add('rotate');
+		} else {
+			item.target.classList.remove('zoom');	
+			item.target.classList.remove('rotate');	
+		}
+	};
+}
+
+// AND THIS ALSO WORKS:
 let callback = (items) => { 
 	items.forEach(item => {
 		// If item (box) is visible - according with the params set in `options`
