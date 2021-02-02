@@ -44,16 +44,16 @@ let callback = (items) => {
 	});
 }
 
-/** Create the intersection observer instance 
- 		by calling its constructor and passing it a 
- 		callback function to be run whenever a threshold 
- 		is crossed in one direction or the other:
-*/
+// Create the intersection observer instance 
+// by calling its constructor and passing it a 
+// callback function to be run whenever a threshold 
+// is crossed in one direction or the other:
+
 let observer = new IntersectionObserver(callback, options);
 
-/** Get all the ".box" and ".circle" items 
- 		from the DOM and attach the observer to these:
-*/
+// Get all the ".box" and ".circle" items 
+// from the DOM and attach the observer to them:
+
 document.querySelectorAll('.box')
 	.forEach(item => { observer.observe(item) });
 
