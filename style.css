@@ -1,46 +1,47 @@
-:root {
-  --base: black;
-  --border: #ccc;
-}
 
 body {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 20rem;
-  font-family: sans-serif
+  font-family: sans-serif;
+  overflow-x: hidden
 }
 
+/* first we make the circle */
+.circle {
+  width: 30vh;
+  height: 30vh;
+  margin: 20vh 0;
+  border: .2rem solid yellow;
+  border-radius: 50%;
+  background:yellow;
+  transform:translateX(0rem);
+  transition: all 2s ease, background 2s ease, border 3s ease;
+}
+
+/* Then we make the box */
 .box {
   width: 30vh;
   height: 30vh;
   margin: 20vh 0;
-  border: 0.2rem solid var(--border);
+  border: 0.2rem solid white;
   border-radius: 0;
   background:red;
   transition: background 1s ease, border 0.4s ease, transform 3s ease;
 }
 
-.circle {
-  width: 30vh;
-  height: 30vh;
-  margin: 20vh 0;
-  border: 0.2rem solid yellow;
-  border-radius: 50%;
-  background:yellow;
-  transform:translateX(20rem);
-  transition: all 2s ease, background 2s ease, border 3s ease;
-}
-
-.box.rotate {
-  border-color: var(--base);
-  background-color: var(--base);
+/* totate and green zoom animation */
+.rotate {
+  border-color: white;
+  background-color: black;
   border: solid 10rem green;
   transform: rotate(360deg)
 }
 
-.circle.zoom {
-  border-color: var(--base);
+/* magenta yellow zoom animation */
+.zoom {
+  border-color: black;
   background-color: magenta;
   border: solid 10rem orange;
   transform:translateX(0rem); 
