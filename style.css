@@ -3,46 +3,61 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 20rem;
+  margin-top: 0rem;
   font-family: sans-serif;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
+
+section {
+  height:800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow:hidden;
+  border:solid 1px black;
+}
+
 
 /* first we make the circle */
 .circle {
-  width: 30vh;
-  height: 30vh;
-  margin: 20vh 0;
-  border: .2rem solid yellow;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background:yellow;
-  transform:translateX(0rem);
-  transition: all 2s ease, background 2s ease, border 3s ease;
+  /* quickly "reset" animations */
+  transition: all .1s ease;
 }
+
 
 /* Then we make the box */
 .box {
-  width: 30vh;
-  height: 30vh;
-  margin: 20vh 0;
-  border: 0.2rem solid white;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-color:yellow;
   border-radius: 0;
   background:red;
-  transition: background 1s ease, border 0.4s ease, transform 3s ease;
+  /* quickly "reset" animations */
+  transition: all .1s ease;
 }
 
-/* totate and green zoom animation */
+/* AND NOW THE ANIMATIONS!!! */
+
+/* make the box rotate and animate a green border! */
 .rotate {
   border-color: white;
   background-color: black;
-  border: solid 10rem green;
-  transform: rotate(360deg)
+  border-color:yellow;
+  border-top: solid 10rem green;
+  transform: rotate(180deg);
+  /* you can add different animation speeds for different CSS attributes */
+  transition: background 1s ease, border 4s ease, transform 2s ease;
 }
 
-/* magenta yellow zoom animation */
+/* make the circle zoom and make it pink! */
 .zoom {
   border-color: black;
   background-color: magenta;
-  border: solid 10rem orange;
-  transform:translateX(0rem); 
+  transition: all 5s ease
 }
