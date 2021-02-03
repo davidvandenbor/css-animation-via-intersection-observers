@@ -34,12 +34,11 @@ section {
 .box {
   width: 200px;
   height: 200px;
-  margin: 0 auto;
   border-color:yellow;
   border-radius: 0;
   background:red;
   /* quickly "reset" animations */
-  transition: all .1s ease;
+  /* transition: all .1s ease; */
 }
 
 /* AND NOW THE ANIMATIONS!!! */
@@ -58,6 +57,7 @@ section {
 /* make the circle zoom and make it pink! */
 .zoom {
   border-color: black;
+  border:solid 10rem black;
   background-color: magenta;
   transition: all 5s ease
 }
