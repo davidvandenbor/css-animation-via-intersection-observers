@@ -1,63 +1,116 @@
-
 body {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 0rem;
-  font-family: sans-serif;
-  overflow-x: hidden;
+	font-size: 14px;
+	font-family: sans-serif;
+	background: rgb(184, 184, 184);
+	padding: 0 10rem;
 }
+
+h1 {
+	font-size: 1rem;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-align: center;
+}
+/* the white chapters --------------------------- */
 
 section {
-  height:800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  overflow:hidden;
-  border:solid 1px black;
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.582);
+	margin: 100px auto;
 }
 
+/* the HTML elements (circle, big square, little square) */
 
-/* first we make the circle */
 .circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background:yellow;
-  /* quickly "reset" animations */
-  transition: all .1s ease;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+	background: red;
 }
 
-
-/* Then we make the box */
 .box {
-  width: 200px;
-  height: 200px;
-  border-color:yellow;
-  border-radius: 0;
-  background:red;
-  /* quickly "reset" animations */
-  /* transition: all .1s ease; */
+	width: 300px;
+	height: 300px;
+	background: brown;
+	border: solid 20px black;
 }
 
-/* AND NOW THE ANIMATIONS!!! */
-
-/* make the box rotate and animate a green border! */
-.rotate {
-  border-color: white;
-  background-color: black;
-  border-color:yellow;
-  border-top: solid 10rem green;
-  transform: rotate(180deg);
-  /* you can add different animation speeds for different CSS attributes */
-  transition: background 1s ease, border 4s ease, transform 2s ease;
+.little-square {
+	width: 100px;
+	height: 100px;
+	background: green;
+	z-index: 1;
 }
 
-/* make the circle zoom and make it pink! */
-.zoom {
-  border-color: black;
-  border:solid 10rem black;
-  background-color: magenta;
-  transition: all 5s ease
+/* animated objects -------------------------------- */
+
+.circle.animate {
+	animation-name: fromRight;
+	animation-fill-mode: forwards;
+	animation-duration: 3s;
+	animation-delay: 0s;
+}
+
+.box.animate {
+	animation: rotateIn 0.7s ease-out;
+	animation-fill-mode: forwards;
+}
+
+.little-square.animate {
+	animation-name: smoothLanding;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+	animation-duration: 3s;
+	animation-delay: 0.2s;
+}
+
+/* animations --------------------------------------- */
+
+.animate-me {
+	/* hide all the animated objects 
+  before they start animating! */
+	opacity: 0;
+}
+
+@keyframes fromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(40rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0rem);
+	}
+}
+
+/* ROTATE---------------------------------- */
+
+@keyframes rotateIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(-180deg) translateX(-30rem);
+		border: solid 20rem black;
+	}
+}
+
+@keyframes smoothLanding {
+	0% {
+		opacity: 0;
+		transform: translateX(0rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(30rem) rotate(180deg);
+	}
 }
