@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSS viewport animations with vanilla javascript</title>
   <link rel="stylesheet" href="style.css">
 </head>
-  
+
 <body>
   
-<h1>Scroll down</h1>
+  <h1>scroll down and up to trigger the CSS animations!</h1>
+  <section id="chapter1">
+    <div class="circle animate-me"></div>
+  </section>
 
-<section id="chapter1">
-  <div id="circle" class="circle"></div>
-</section>
+  <section id="chapter2">
+    <div class="little-square animate-me"></div>
+    <div class="box animate-me"></div>
+  </section>
 
-<section id="chapter2">
-  <div id="box" class="box">
-</section>
-
-</div>
-
-
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
-  
+
 </html>
