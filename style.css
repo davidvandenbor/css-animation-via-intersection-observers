@@ -6,6 +6,7 @@ body {
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	overflow-x:hidden;
 }
 
 h1 {
@@ -84,12 +85,14 @@ section {
 @keyframes fromRight {
 	0% {
 		opacity: 0;
-		border:solid 0rem black;
+		border:solid 0rem rgb(255, 208, 0);
 		transform: translateX(20rem);
 	}
 
 	100% {
-		opacity: 1;	border:solid 10rem black;
+
+		opacity: 1;	
+		border:solid 10rem rgb(255, 208, 0);
 		transform: translateX(0rem);
 	
 	}
