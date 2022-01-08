@@ -9,6 +9,10 @@ body {
 	overflow-x:hidden;
 }
 
+@media (max-height:400px) {
+	body {zoom:.5}
+	{
+
 h1 {
 	font-size: 1rem;
 	font-weight: normal;
